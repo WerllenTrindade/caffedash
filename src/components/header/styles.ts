@@ -8,7 +8,8 @@ export const s = StyleSheet.create({
         flexDirection: "row",
         gap: 10,
         alignItems: "center",
-        padding: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 30,
         justifyContent: "space-between",
     },
     img: {

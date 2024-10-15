@@ -8,7 +8,7 @@ import {
 } from '@expo-google-fonts/sora'
 import * as SplashScreen from 'expo-splash-screen';
 
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function Layout(){
     const [ fontsLoaded ] = useFonts({
@@ -19,7 +19,7 @@ export default function Layout(){
     })
 
     if(!fontsLoaded){
-        return SplashScreen.hideAsync();
+        console.log('dqwdqwdwq')
     }
 
     return (

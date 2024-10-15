@@ -5,6 +5,8 @@ import { Image, Platform, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from 'expo-linear-gradient';
 import promotion from '@/assets/promotion.png';
+import { Groups } from "@/components/groups";
+import { StatusBar } from "expo-status-bar";
 
 export default function Index() {
     return (
@@ -13,7 +15,12 @@ export default function Index() {
                 <Headers />
                 <Search placeholder="Search coffe" placeholderTextColor={colors.text_placeholder}  />
             </LinearGradient>
-                <Image source={promotion} />
+            <View style={{position: 'relative', bottom: '8%', alignItems: 'center'}}>
+                
+                <Image source={promotion} style={{borderRadius: 8}} />
+            </View>
+
+            <Groups />
         </SafeAreaView>
     )
 }
