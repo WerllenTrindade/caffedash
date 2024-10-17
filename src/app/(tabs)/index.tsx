@@ -1,26 +1,33 @@
-import Headers from "@/components/header";
-import Search from "@/components/search";
+
 import { colors } from "@/styles/colors";
-import { Image, Platform, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { LinearGradient } from 'expo-linear-gradient';
-import promotion from '@/assets/promotion.png';
+import { FlatList, View } from "react-native";
 import { Groups } from "@/components/groups";
-import { StatusBar } from "expo-status-bar";
+import { coffeProdutos, listaProdutos } from "@/utils/products";
+import { CardProduct } from "@/components/cards/cardProduct";
+import GeneralStatusBarColor from "@/components/StatusBarIOS/GeneralStatusBarColor";
+import HeaderHome from "@/components/headers/home";
 
 export default function Index() {
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <LinearGradient style={{height: '35%', position: 'relative'}} colors={colors.background_linear}>
-                <Headers />
-                <Search placeholder="Search coffe" placeholderTextColor={colors.text_placeholder}  />
-            </LinearGradient>
-            <View style={{position: 'relative', bottom: '8%', alignItems: 'center'}}>
-                
-                <Image source={promotion} style={{borderRadius: 8}} />
-            </View>
 
+    const renderItem = ({ item }: {item: listaProdutos}) => <CardProduct data={item} />
+    
+    return (
+        <View style={{ flex: 1, backgroundColor: colors.background}}>
+            <GeneralStatusBarColor backgroundColor={'#131313'}  barStyle="light-content"/>
+            <HeaderHome/>
             <Groups />
-        </SafeAreaView>
+            
+            <FlatList
+                numColumns={2}
+                keyExtractor={item => item.id.toString()}
+                data={coffeProdutos}
+                renderItem={renderItem}
+                contentContainerStyle={{ gap: 24, alignItems: 'center', }}
+                columnWrapperStyle={{ gap: 55 }}
+                ListEmptyComponent={() => <View style={{paddingTop: 20}} />}
+                ListHeaderComponent={()=><View style={{}}/>}
+                stickyHeaderIndices={[0]}
+            />
+        </View>
     )
 }

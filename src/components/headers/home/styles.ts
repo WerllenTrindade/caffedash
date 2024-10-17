@@ -10,7 +10,12 @@ export const s = StyleSheet.create({
         alignItems: "center",
         paddingHorizontal: 20,
         paddingVertical: 30,
-        justifyContent: "space-between",
+        justifyContent: "space-between"
+    },
+    linearGradient: {
+        borderBottomLeftRadius: 25,
+        borderBottomRightRadius: 25,
+        marginBottom: 10
     },
     img: {
         width: 50,

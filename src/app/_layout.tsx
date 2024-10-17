@@ -7,6 +7,7 @@ import {
     useFonts
 } from '@expo-google-fonts/sora'
 import * as SplashScreen from 'expo-splash-screen';
+import Details from './details/[id]';
 
 // SplashScreen.preventAutoHideAsync();
 
@@ -23,6 +24,7 @@ export default function Layout(){
     }
 
     return (
-        <Stack screenOptions={{ headerShown: false}} />
+        // <Stack screenOptions={{ headerShown: false}} />
+        <Details />
     )
 }

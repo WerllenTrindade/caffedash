@@ -14,20 +14,11 @@ export const s = StyleSheet.create({
     },
     input:{
         backgroundColor: '#313131',
-        height: 45,
+        height: 52,
         borderRadius: 10,
         paddingLeft: 45,
         color: colors.white,
         fontFamily: fontFamily.regular
-    },
-    containSliders:{
-        backgroundColor: colors.primary,
-        right: 8,
-        borderRadius: 8,
-        position: 'absolute',
-    },
-    sliders:{
-        padding: 10,
     },
     search:{
         position: 'absolute',
